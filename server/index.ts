@@ -5,7 +5,7 @@ import cors from "cors"
 import bodyParser from "body-parser";
 import dbConnection from "./database/dbConnection";
 import sendMessageRouter from "./routes/sendMessage"
-
+import userRoutes from "./routes/userRoutes"
 
 
 
@@ -28,8 +28,8 @@ const corsOption={
 app.use(cors(corsOption));
 app.use(bodyParser.json());
 
-app.use("/api/v1/message",sendMessageRouter)
-
+app.use("/api/v1/message",sendMessageRouter);
+app.use("/api/v1/auth",userRoutes);
 
 
 
